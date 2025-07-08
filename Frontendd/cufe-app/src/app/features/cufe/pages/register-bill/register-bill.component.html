@@ -1,0 +1,23 @@
+<form class="cufe-form" [formGroup]="cufeForm" (ngSubmit)="submit()">
+  <div class="cufe-form__field" *ngFor="let field of cufeForm.controls | keyvalue">
+    <label class="cufe-form__label">{{ field.key }}:</label>
+    <input class="cufe-form__input" [formControlName]="field.key" />
+    <div 
+      class="cufe-form__error"
+      *ngIf="field.value.invalid && (field.value.dirty || field.value.touched)">
+      Campo inválido
+    </div>
+  </div>
+  <button 
+    class="cufe-form__submit" 
+    type="submit" 
+    [disabled]="!cufeForm.valid">
+    Generar CUFE
+  </button>
+</form>
+
+<div class="cufe-form__result" *ngIf="resultCufe">
+  <h3 class="cufe-form__result-title">CUFE generado:</h3>
+  <pre class="cufe-form__result-code">{{ resultCufe.cufe }}</pre>
+</div>
+
