@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CufeApplication<cufe>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.mycompany.cufe.CufeApplication",
+            "projectName": "cufe",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
